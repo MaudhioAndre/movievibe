@@ -1,5 +1,7 @@
 <script setup>
 const { title, rating, year, img } = defineProps(["title", "rating", "year", "img"]);
+import { useDateFormat, useNow } from "@vueuse/core";
+const formattedDate = useDateFormat(year, "D-MMM-YYYY");
 </script>
 
 <template>
@@ -11,7 +13,7 @@ const { title, rating, year, img } = defineProps(["title", "rating", "year", "im
       </h2>
       <h3>
         <span>Rating : {{ rating }}</span
-        ><span>{{ year }}</span>
+        ><span>{{ formattedDate }}</span>
       </h3>
     </div>
   </figcaption>

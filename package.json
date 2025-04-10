@@ -12,13 +12,16 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@inkline/inkline": "^4.2.1",
+    "@vueuse/core": "^13.1.0",
     "pinia": "^3.0.1",
     "vue": "^3.5.13",
-    "vue-router": "^4.5.0",
-    "@inkline/inkline": "^4.2.1"
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
+    "@inkline/config": "^1.9.1",
+    "@inkline/plugin": "^1.5.2",
     "@vitejs/plugin-vue": "^5.2.3",
     "@vitejs/plugin-vue-jsx": "^4.1.2",
     "@vitest/eslint-plugin": "^1.1.38",
@@ -29,12 +32,10 @@
     "globals": "^16.0.0",
     "jsdom": "^26.0.0",
     "prettier": "3.5.3",
+    "sass": "^1.64.0",
     "sass-embedded": "^1.86.3",
     "vite": "^6.2.4",
     "vite-plugin-vue-devtools": "^7.7.2",
-    "vitest": "^3.1.1",
-    "@inkline/plugin": "^1.5.2",
-    "@inkline/config": "^1.9.1",
-    "sass": "^1.64.0"
+    "vitest": "^3.1.1"
   }
 }
