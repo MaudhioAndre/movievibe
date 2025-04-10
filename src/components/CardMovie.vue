@@ -1,19 +1,34 @@
 <script setup>
 const { title, rating, year, img } = defineProps(["title", "rating", "year", "img"]);
-import { useDateFormat, useNow } from "@vueuse/core";
+import { useDateFormat } from "@vueuse/core";
+
+import { faStar, faCalendarDays } from "@fortawesome/free-solid-svg-icons";
+
 const formattedDate = useDateFormat(year, "D-MMM-YYYY");
+
+function floorInt(angka) {
+  return Math.floor(angka * 10) / 10;
+}
 </script>
 
 <template>
   <figcaption :style="{ backgroundImage: `url(${img})` }">
-    <!-- <img :src="img" loading="lazy" /> -->
     <div>
       <h2>
         {{ title }}
       </h2>
       <h3>
-        <span>Rating : {{ rating }}</span
-        ><span>{{ formattedDate }}</span>
+        <span>
+          <svg-icon :fa-icon="faStar" :size="13" style="margin-top: -3px"></svg-icon>
+          {{ floorInt(rating) }}</span
+        ><span
+          ><svg-icon
+            :fa-icon="faCalendarDays"
+            :size="13"
+            style="margin-top: -3px"
+          ></svg-icon>
+          {{ formattedDate }}</span
+        >
       </h3>
     </div>
   </figcaption>
@@ -24,7 +39,6 @@ figcaption {
   height: 300px;
   background-repeat: no-repeat;
   background-position: center;
-  /* background-size: cover; */
   background-size: 200px 300px;
   display: flex;
   align-items: end;

@@ -1,19 +1,22 @@
-import './assets/main.css';
+import './assets/main.css'
 
-import { createApp } from 'vue';
-import { createPinia } from 'pinia';
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 
-import App from './App.vue';
-import router from './router';
+import App from './App.vue'
+import router from './router'
 
-import { Inkline, components } from '@inkline/inkline';
-import './css/variables/index.scss';
-import '@inkline/inkline/css/index.scss';
-import '@inkline/inkline/css/utilities.scss';
+import { Inkline, components } from '@inkline/inkline'
+import './css/variables/index.scss'
+import '@inkline/inkline/css/index.scss'
+import '@inkline/inkline/css/utilities.scss'
 
-const app = createApp(App).use(Inkline, { components });
+import SvgIcon from 'vue3-icon'
 
-app.use(createPinia());
-app.use(router);
+const app = createApp(App).use(Inkline, { components })
 
-app.mount('#app');
+app.use(createPinia())
+app.use(router)
+app.component('svg-icon', SvgIcon)
+
+app.mount('#app')
